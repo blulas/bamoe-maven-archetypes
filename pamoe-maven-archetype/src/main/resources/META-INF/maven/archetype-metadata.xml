@@ -101,10 +101,6 @@
 			<defaultValue>jar</defaultValue>
 		</requiredProperty>
 
-		<requiredProperty key="useBPMN">
-			<defaultValue>true</defaultValue>
-		</requiredProperty>
-
 		<requiredProperty key="useDMN">
 			<defaultValue>true</defaultValue>
 		</requiredProperty>
@@ -240,7 +236,7 @@
 		</requiredProperty>
 
 		<requiredProperty key="containerImageGroup">
-			<defaultValue>bamoe-apps</defaultValue>
+			<defaultValue>bamoe</defaultValue>
 		</requiredProperty>
 
 		<requiredProperty key="containerImageBuilder">
@@ -339,6 +335,5 @@
 		<requiredProperty key="roles">
 			<defaultValue>admin,HR,IT</defaultValue>
 		</requiredProperty>
-
 	</requiredProperties>
 </archetype-descriptor>
