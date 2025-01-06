@@ -1,4 +1,4 @@
-# IBM Decision Manager Open Edition - Maven Archetype
+# IBM Process Automation Manager Open Edition - Maven Archetype
 
 This repository contains a custom [**Maven Archetype**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.0.0?topic=introduction-what-is-bamoe) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
 
@@ -36,7 +36,7 @@ Once the archetype has been built and installed into the enterprise artifact rep
 
 The command above represents the minimal set of properties for the archetype. The `-B command line option` essentially tells the archetype to run in batch mode, rather than interactive mode, which prompts for each archetype property. Each archetype property has a specific default value, set in the archetype descriptor, in the event the property is not provided on the command line. The remainder of the parameters are listed in the following table. All parameters can be added to the call to the archetype by specifying `-DparameterName=parameterValue` on the command line. Please note that most parameters have default values and are not required.
 
-**Decision Manager Open Edition Maven Archetype - Required and Optional Parameters.**
+**Process Automation Manager Open Edition Maven Archetype - Required and Optional Parameters.**
 | Parameter Name | Type   | Description | Default Value | Required ? |
 | :---           | :----: | :---        | :-----------: | :--------: |
 | archetypeGroupId | String | Group ID for the archetype | None | Yes |
