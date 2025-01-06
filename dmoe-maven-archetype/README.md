@@ -30,7 +30,11 @@ This custom Maven archetype can be run from the developer workstation, build ser
 
 Once the archetype has been built and installed into the enterprise artifact repository, navigate to the project folder for which you would like to create the new project, and run the following command (replacing the properties with the appropriate project value):
 
-`mvn archetype:generate -B -DarchetypeGroupId=com.ibm.bamoe.maven -DarchetypeArtifactId=dmoe-maven-archetype -DarchetypeVersion=1.0.0 -DprojectName=<project name> -DartifactId=<project artifact id>`
+```bash
+mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeArtifactId=dmoe-maven-archetype" "-DarchetypeVersion=9.1.1" \
+  "-DprojectName=$1" \
+  "-DartifactId=$1" 
+```
 
 ### Archetype Parameters
 
