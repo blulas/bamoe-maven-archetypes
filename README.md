@@ -1,6 +1,6 @@
 # IBM Business Automation Manager Open Editions (BAMOE) - Maven Archetypes Asset
 
-This repository contains custom [**Maven Archetypes**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision and process services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.1.x?topic=overview-about-business-automation-manager-open-editions) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
+This repository contains custom [**Maven Archetypes**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating decision and process services based on [**IBM Business Automation Manager Open Edition**](https://www.ibm.com/docs/en/ibamoe/9.1.x?topic=overview-about-business-automation-manager-open-editions) including the legacy version 8 as well as the latest cloudn-native release v9.
 
 ## Overview
 
