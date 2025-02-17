@@ -1,4 +1,4 @@
-# IBM Decision Manager Open Edition - Maven Archetype
+# IBM Decision Manager Open Edition (Legacy) - Maven Archetype
 
 This repository contains a custom [**Maven Archetype**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.0.0?topic=introduction-what-is-bamoe) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
 
@@ -31,7 +31,7 @@ This custom Maven archetype can be run from the developer workstation, build ser
 Once the archetype has been built and installed into the enterprise artifact repository, navigate to the project folder for which you would like to create the new project, and run the following command (replacing the properties with the appropriate project value):
 
 ```bash
-mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeArtifactId=dmoe-legacy-maven-archetype" "-DarchetypeVersion=1.0.0" \
+mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeArtifactId=dmoe-maven-archetype" "-DarchetypeVersion=9.1.1" \
   "-DprojectName=$1" \
   "-DartifactId=$1" 
 ```

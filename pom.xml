@@ -4,13 +4,15 @@
 
 	<groupId>com.ibm.bamoe.maven</groupId>
 	<artifactId>bamoe-maven</artifactId>
-	<version>9.1.1</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<modules>
 		<module>fact-model-maven-archetype</module>
 		<module>dmoe-maven-archetype</module>
 		<module>pamoe-maven-archetype</module>
+		<module>dmoe-legacy-maven-archetype</module>
+		<module>pamoe-legacy-maven-archetype</module>
 	</modules>
 
 	<properties>

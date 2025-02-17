@@ -1,6 +1,6 @@
 # IBM Business Automation Manager Manager Open Edition - Fact Model Maven Archetype
 
-This repository contains a custom [**Maven Archetype**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.0.0?topic=introduction-what-is-bamoe) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
+This repository contains a custom [**Maven Archetype**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.1.x) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
 
 ## Overview
 
@@ -31,7 +31,7 @@ This custom Maven archetype can be run from the developer workstation, build ser
 Once the archetype has been built and installed into the enterprise artifact repository, navigate to the project folder for which you would like to create the new project, and run the following command (replacing the properties with the appropriate project value):
 
 ```bash
-mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeArtifactId=fact-model-maven-archetype" "-DarchetypeVersion=9.1.1" \
+mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeArtifactId=fact-model-maven-archetype" "-DarchetypeVersion=1.0.0" \
   "-DprojectName=$1" \
   "-DartifactId=$1" 
 ```
@@ -54,7 +54,7 @@ The command above represents the minimal set of properties for the archetype. Th
 | artifactId | String | Maven artifactId for generated project | untitled | No |
 | version | String | Maven version for generated project | 1.0.0-SNAPSHOT | No |
 | packaging | String | Maven build package target | jar | No |
-| javaVersion | String | Version of Java JDK | 11 | No |
+| javaVersion | String | Version of Java JDK | 17 | No |
 | mavenCompilerPluginVersion | String | Maven compiler plugin version | 3.10.1 | No |
 | mavenSurefirePluginVersion | String | Maven sure-fire plugin version | 3.0.0-M7 | No |
 | sourceEncoding | String | Source encoding scheme | UTF-8 | No |

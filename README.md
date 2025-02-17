@@ -1,6 +1,6 @@
 # IBM Business Automation Manager Open Editions (BAMOE) - Maven Archetypes Asset
 
-This repository contains custom [**Maven Archetypes**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision and process services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.0.0?topic=introduction-what-is-bamoe) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
+This repository contains custom [**Maven Archetypes**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision and process services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.1.x?topic=overview-about-business-automation-manager-open-editions) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
 
 ## Overview
 
@@ -11,11 +11,13 @@ In short, Archetype is a Maven project template generation toolkit. An archetype
 This is a multi-module repository, with the following modules:
 
 - [**Fact Model Maven Archetype**](./fact-model-maven-archetype) is an archetype that can create a reusable fact model project. 
+- [**IBM Decision Manager Open Edition (DMOE) Legacy (KJAR) Maven Archetype**](./dmoe-legacy-maven-archetype) is an archetype that can create a legacy DMOE (v8) decision service KJAR project. 
+- [**IBM Process Automation Manager Open Edition (PAMOE) Legacy (KJAR) Maven Archetype**](./pamoe-legacy-maven-archetype) is an archetype that can create a legacy (v8) PAMOE process service KJAR project.
 - [**IBM Decision Manager Open Edition (DMOE) Maven Archetype**](./dmoe-maven-archetype) is an archetype that can create a DMOE decision service project. 
-- [**IBM Process Automation Manager Open Edition (PAMOE) Decision Manager Open Edition Maven Archetype**](./pamoe-maven-archetype) is an archetype that can create a PAMOE process service project. 
+- [**IBM Process Automation Manager Open Edition (PAMOE) Maven Archetype**](./pamoe-maven-archetype) is an archetype that can create a PAMOE process service project. 
 
 ## Additional Information (*Appendicies*)
-This repository is focused on business automation using [**IBM Business Automation Manager Open Editions**](https://www.ibm.com/docs/en/ibamoe/9.0.0?topic=introduction-what-is-bamoe) products, specifically the IBM build of [**Kogito**](https://kogito.kie.org/) known as **IBM Decision Manager Open Edition (DMOE)** and **IBM Process Automation Manager Open Edition (PAMOE)**, leveraging [**Quarkus**](https://quarkus.io/) as the assoicated container runtime.  The following online documentation is available in order to learn various aspects of these products and frameworks:
+This repository is focused on business automation using [**IBM Business Automation Manager Open Editions**](https://www.ibm.com/docs/en/ibamoe/9.1.x) products, specifically the IBM build of [**Kogito**](https://kogito.kie.org/) known as **IBM Decision Manager Open Edition (DMOE)** and **IBM Process Automation Manager Open Edition (PAMOE)**, leveraging [**Quarkus**](https://quarkus.io/) as the assoicated container runtime.  The following online documentation is available in order to learn various aspects of these products and frameworks:
 
 - [**Apache Maven**](https://maven.apache.org/) is a free and open source software project management and comprehension tool. Based on  the concept of a project object model (POM), Maven can manage a project’s build, reporting and documentation from a central piece of  information. A **getting started guide** is available [here](http://maven.apache.org/guides/getting-started/).
 

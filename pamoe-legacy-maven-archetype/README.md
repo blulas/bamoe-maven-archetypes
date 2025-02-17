@@ -1,22 +1,22 @@
-# IBM Decision Manager Open Edition - Maven Archetype
+# IBM Process Automation Manager Open Edition (Legacy) - Maven Archetype
 
-This repository contains a custom [**Maven Archetype**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.0.0?topic=introduction-what-is-bamoe) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
+This repository contains a custom [**Maven Archetype**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision and process services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.0.0?topic=introduction-what-is-bamoe) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
 
 ## Overview
 
-In short, Archetype is a Maven project template generation toolkit. An archetype is defined as an original pattern or model from which all other things of the same kind are made. The name fits as we are trying to provide a system that provides a consistent means of generating Maven projects, specifically, Kogito Decision Service projects. The archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates.
+In short, Archetype is a Maven project template generation toolkit. An archetype is defined as an original pattern or model from which all other things of the same kind are made. The name fits as we are trying to provide a system that provides a consistent means of generating Maven projects, specifically, Kogito Process Service projects. The archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates.
 
-The `IBM Decision Manager Open Edition - Maven Archetype` produces a standard Kogito decision service project structure, complete with a properly configured project `pom.xml` as well as including all of the core dependencies and build targets for a project using these types of artifacts.  
+The `IBM Process Automation Manager Open Edition - Maven Archetype` produces a standard Kogito process service project structure, complete with a properly configured project `pom.xml` as well as including all of the core dependencies and build targets for a project using these types of artifacts.  
 
 ## Getting Started
 
-In order to create a decision service project using the archetype, the archetype and plugin must both be installed/deployed to a Maven cache accessible to each developer. Once this is completed, the archetype can be used by a developer using the VS Code IDE.
+In order to create a process service project using the archetype, the archetype and plugin must both be installed/deployed to a Maven cache accessible to each developer. Once this is completed, the archetype can be used by a developer using the VS Code IDE.
 
 ## What Gets Generated?
 
-Upon successful execution of the archetype, a directory will be created for your project containg the Maven project struture for the decision service.  All standard Maven commands can now be used in order to build, deploy, and test the decision service.
+Upon successful execution of the archetype, a directory will be created for your project containg the Maven project struture for the process service.  All standard Maven commands can now be used in order to build, deploy, and test the process service.
 
-**_Note_**: There may be certain scenarios where the Git ignore file (_.gitignore_) may not be generated for the new  project.  This is due to a bug in Maven's archetype genearation code.  In the event of this, please add the `.gitignore` file manually to the decision service's root folder.
+**_Note_**: There may be certain scenarios where the Git ignore file (_.gitignore_) may not be generated for the new  project.  This is due to a bug in Maven's archetype genearation code.  In the event of this, please add the `.gitignore` file manually to the process service's root folder.
 
 ## Building the Project
 
@@ -31,7 +31,7 @@ This custom Maven archetype can be run from the developer workstation, build ser
 Once the archetype has been built and installed into the enterprise artifact repository, navigate to the project folder for which you would like to create the new project, and run the following command (replacing the properties with the appropriate project value):
 
 ```bash
-mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeArtifactId=dmoe-legacy-maven-archetype" "-DarchetypeVersion=1.0.0" \
+mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeArtifactId=pamoe-maven-archetype" "-DarchetypeVersion=9.1.1" \
   "-DprojectName=$1" \
   "-DartifactId=$1" 
 ```
@@ -40,14 +40,14 @@ mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeA
 
 The command above represents the minimal set of properties for the archetype. The `-B command line option` essentially tells the archetype to run in batch mode, rather than interactive mode, which prompts for each archetype property. Each archetype property has a specific default value, set in the archetype descriptor, in the event the property is not provided on the command line. The remainder of the parameters are listed in the following table. All parameters can be added to the call to the archetype by specifying `-DparameterName=parameterValue` on the command line. Please note that most parameters have default values and are not required.
 
-**Decision Manager Open Edition Maven Archetype - Required and Optional Parameters.**
+**Process Automation Manager Open Edition Maven Archetype - Required and Optional Parameters.**
 | Parameter Name | Type   | Description | Default Value | Required ? |
 | :---           | :----: | :---        | :-----------: | :--------: |
 | archetypeGroupId | String | Group ID for the archetype | None | Yes |
 | archetypeArtifactId | String | Artifact ID for the archetype | None | Yes |
 | archetypeVersion | String | Version number for the archetype | None | Yes |
-| projectName | String | Project name (becomes decision service name) | untitled | No |
-| projectDescription | String | Project description | Decision Service Project | No |
+| projectName | String | Project name (becomes process service name) | untitled | No |
+| projectDescription | String | Project description | Project Service Project | No |
 | groupId | String | Maven groupId for generated project | com.ibm.bamoe | No |
 | artifactId | String | Maven artifactId for generated project | untitled | No |
 | version | String | Maven version for generated project | 1.0.0-SNAPSHOT | No |
@@ -92,6 +92,19 @@ The command above represents the minimal set of properties for the archetype. Th
 | containerImageRegistry | String | Image registry | quay.io | No |
 | containerImageUser | String | Image registry username | true | No |
 | containerImagePassword | String | Image registry password | true | No |
+| kogitoJobsServiceURL | String | Job service URL | http://localhost:${quarkus.http.port} | No |
+| kogitoDataIndexURL | String | Data index URL | http://localhost:${quarkus.http.port} | No |
+| flyawayEnabled | Boolean | Auto-generate tables? | false | No |
+| persistenceType | String | Type of persistence | jdbc | No |
+| dbKind | String | Database type | postgresql | No |
+| dbUser | String | Database password | bamoe-user | No |
+| dbPassword | String | Database password | bamoe-pass | No |
+| jdbcURL | String | JDBC URL | jdbc:postgresql://0.0.0.0:5432/bamoe | No |
+| reactiveURL | String | Reactive URL | postgresql://0.0.0.0:5432/bamoe | No |
+| transactionsEnabled | Boolean | Enable transactions? | true | No |
+| processTransactionsEnabled | Boolean | Enable process transactions? | true | No |
+| userTaskTransactionsEnabled | Boolean | Enable user task transactions? | true | No |
+| roles | String | Roles for user tasks | admin,HR,IT | No |
 
 **Note:** *The parameters of this archetype are meant to be extended as the organization adds more sharable dependencies, so please be sure to update these properties, the archetype, and this documentation!*
 
