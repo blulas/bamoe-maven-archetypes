@@ -150,9 +150,6 @@
             <properties>
                 <quarkus.profile>dev</quarkus.profile>
             </properties>
-
-            <dependencies>
-            </dependencies>
         </profile>
     </profiles>
 
