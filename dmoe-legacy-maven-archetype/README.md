@@ -1,4 +1,4 @@
-# IBM Decision Manager Open Edition (Legacy) - Maven Archetype
+# IBM Decision Manager Open Edition (Legacy) - KJAR Maven Archetype
 
 This repository contains a custom [**Maven Archetype**](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating cloud native decision services based on [**IBM Business Automation Manager Open Edition v9**](https://www.ibm.com/docs/en/ibamoe/9.0.0?topic=introduction-what-is-bamoe) using [**Quarkus**](https://https://quarkus.io//) as the associated container runtime.
 
@@ -31,7 +31,7 @@ This custom Maven archetype can be run from the developer workstation, build ser
 Once the archetype has been built and installed into the enterprise artifact repository, navigate to the project folder for which you would like to create the new project, and run the following command (replacing the properties with the appropriate project value):
 
 ```bash
-mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeArtifactId=dmoe-maven-archetype" "-DarchetypeVersion=9.1.1" \
+mvn archetype:generate -B "-DarchetypeGroupId=com.ibm.bamoe.maven" "-DarchetypeArtifactId=dmoe-legacy-maven-archetype" "-DarchetypeVersion=1.0.0" \
   "-DprojectName=$1" \
   "-DartifactId=$1" 
 ```
@@ -53,7 +53,7 @@ The command above represents the minimal set of properties for the archetype. Th
 | version | String | Maven version for generated project | 1.0.0-SNAPSHOT | No |
 | packaging | String | Maven build package target | jar | No |
 | skipTests | Boolean | Determines if unit tests are automatically run | true| No |
-| javaVersion | String | Version of Java JDK | 17 | No |
+| javaVersion | String | Version of Java JDK | 11 | No |
 | mavenCompilerPluginVersion | String | Maven compiler plugin version | 3.10.1 | No |
 | mavenCompilerParameters | Boolean | Maven compiler parameters | true | No |
 | mavenResourcesPluginVersion | String | Maven resources plugin version | 3.2.0 | No |

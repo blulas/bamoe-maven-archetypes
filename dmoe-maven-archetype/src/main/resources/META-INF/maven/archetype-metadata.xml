@@ -62,17 +62,6 @@
 				<include>.gitkeep</include>
 			</includes>
 		</fileSet>
-
-		<!-- This folder contains the docker files for the project -->
-		<fileSet filtered="true" packaged="false" encoding="UTF-8">
-			<directory>src/main/docker</directory>
-			<includes>
-				<include>**/*.jvm</include>
-				<include>**/*.native</include>
-				<include>**/*.native-micro</include>
-				<include>.gitkeep</include>
-			</includes>
-		</fileSet>
 	</fileSets>
 
 	<!-- These properties are required -->
@@ -106,7 +95,7 @@
 		</requiredProperty>
 
 		<requiredProperty key="useDRL">
-			<defaultValue>false</defaultValue>
+			<defaultValue>true</defaultValue>
 		</requiredProperty>
 
 		<requiredProperty key="useILMT">
@@ -243,31 +232,9 @@
 			<defaultValue>jib</defaultValue>
 		</requiredProperty>
 
-		<!-- Kubernetes -->
-		<requiredProperty key="kubernetesClientApiServerURL">
-			<defaultValue>untitled</defaultValue>
-		</requiredProperty>
-
-		<requiredProperty key="kubernetesClientToken">
-			<defaultValue>untitled</defaultValue>
-		</requiredProperty>
-
-		<!-- OpenShift -->
-		<requiredProperty key="openshiftDeploy">
-			<defaultValue>false</defaultValue>
-		</requiredProperty>
-
-		<requiredProperty key="openshiftRouteExpose">
-			<defaultValue>true</defaultValue>
-		</requiredProperty>
-
-		<requiredProperty key="openshiftRouteTargetPort">
-			<defaultValue>http</defaultValue>
-		</requiredProperty>
-
 		<!-- Registry -->
 		<requiredProperty key="containerImageRegistry">
-			<defaultValue>quay.io</defaultValue>
+			<defaultValue>dev.local</defaultValue>
 		</requiredProperty>
 
 		<requiredProperty key="containerImageUser">

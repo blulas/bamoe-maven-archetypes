@@ -4,27 +4,85 @@ This repository contains the `${projectName} micro-decision service`, packaged a
 
 *This section should describe this project, what it does, how it does it, it’s dependencies, etc…*
 
+## Maven Settings
+In order to be able to build this project, you must have your Maven `settings.xml` file updated to access the libaries, either via the published Maven repository or via the local/offline version.  The `settings.xml` file located in this sample's `maven` folder includes a sample for your use.
+
+```xml
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/SETTINGS/1.0.0" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <localRepository>${user.home}/.m2/repository</localRepository>
+    <profiles>
+        <profile>
+            <id>ibm-bamoe-v8-enterprise-maven-repository</id>
+            <repositories>
+                <repository>
+                    <id>ibm-bamoe-v8-enterprise-maven-repository</id>
+                    <url>https://maven.repository.redhat.com/ga/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>ibm-bamoe-v8-enterprise-maven-repository</id>
+                    <url>https://maven.repository.redhat.com/ga/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+
+        <profile>
+            <id>ibm-bamoe-v806-enterprise-offline-maven-repository</id>
+            <repositories>
+                <repository>
+                    <id>ibm-bamoe-v806-enterprise-offline-maven-repository</id>
+                    <url>file:///Users/{USER}/.m2/bamoe-8.0.6.GA-maven-repository</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>ibm-bamoe-v806-enterprise-offline-maven-repository</id>
+                    <url>file:///Users/{USER}/.m2/bamoe-8.0.6.GA-maven-repository</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>ibm-bamoe-v8-enterprise-maven-repository</activeProfile>
+        <activeProfile>ibm-bamoe-v806-enterprise-offline-maven-repository</activeProfile>
+    </activeProfiles>
+</settings>
+```
 ## How To Build ${projectName}
 
-Once you have configured your local development environment, you need to perform a `Maven Build` of the repository.  This repository is built using `mvn clean install` by either the CI/CD pipeline or on a local developer workstation.  If deploying artifacts to an enterprise Maven repository, please use `mvn clean deploy`, which requires configuration of the `distributionManagement` section of your project's parent pom.xml.  This project is configured to generate container images and push them to both the registry as well as your cluster, by adding the following properties and profile selection:
+Once you have configured your local development environment, you need to perform a `Maven Build` of the repository.  This repository is built using `mvn clean install` by either the CI/CD pipeline or on a local developer workstation.  If deploying artifacts to an enterprise Maven repository, please use `mvn clean deploy`, which requires configuration of the `distributionManagement` section of your project's parent pom.xml.  
 
 ```bash
-mvn clean install -Denv=container -Pcontainer
+mvn clean install
 ```
-
-The `env` property selects %container properties in the `application.properties` file, based on the container prefix.  You can add -D<property>=<value> to each command in order to determine if the image should be published to the registry as well as being deployed to OpenShift, by overriding these defaults:
-
-- quarkus.container-image.build=<default=true>  --> build the image
-- quarkus.container-image.push=<default=false>  --> push the image to the registry
-- quarkus.openshift.deploy=<default=false>      --> push the image to OCP
-
-Examples: 
-
-```bash 
-mvn clean install -Denv=container -Pcontainer -Dquarkus.container-image.push=true
-```
-
-This command would create and push the image, but require manual deployment.
 
 ## Additional Information (*Appendicies*)
 This repository is focused on business automation using [**IBM Business Automation Manager Open Editions**](https://www.ibm.com/docs/en/ibamoe/9.0.0?topic=introduction-what-is-bamoe) products, specifically the IBM build of [**Kogito**](https://kogito.kie.org/) known as **IBM Decison Manager Open Edition**, leveraging [**Quarkus**](https://quarkus.io/) as the assoicated container runtime.  The following online documentation is available in order to learn various aspects of these products and frameworks:
